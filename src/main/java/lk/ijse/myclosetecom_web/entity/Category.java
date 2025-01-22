@@ -1,11 +1,17 @@
-package lk.ijse.myclosetecom_web.model;
+package lk.ijse.myclosetecom_web.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Set;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Entity
-@Table(name = "category")
+@Table(name = "categories")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +23,4 @@ public class Category {
 
     @OneToMany(mappedBy = "category")
     private Set<Product> products;
-
-    // Getters and setters
 }

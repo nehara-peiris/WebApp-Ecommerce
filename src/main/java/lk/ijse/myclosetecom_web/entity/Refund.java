@@ -1,7 +1,13 @@
-package lk.ijse.myclosetecom_web.model;
+package lk.ijse.myclosetecom_web.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Entity
 @Table(name = "refund")
 public class Refund {

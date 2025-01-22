@@ -1,0 +1,65 @@
+CREATE DATABASE ecommerce;
+
+USE ecommerce;
+
+CREATE TABLE categories (
+    cat_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE users (
+    user_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    fullName VARCHAR(100) NOT NULL,
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    u_role VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE products (
+    p_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    cat_id BIGINT,
+    name VARCHAR(100) NOT NULL,
+    price DOUBLE NOT NULL,
+    qtyOnHand INT NOT NULL,
+    img_url VARCHAR(255) NOT NULL
+    FOREIGN KEY (cat_id) REFERENCES categories(cat_id),
+);
+
+CREATE TABLE cart (
+    cart_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT,
+    p_id BIGINT,
+    quantity INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (p_id) REFERENCES products(p_id)
+);
+
+CREATE TABLE orders (
+    o_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total DOUBLE NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+CREATE TABLE order_details (
+    od_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    o_id BIGINT,
+    p_id BIGINT,
+    quantity INT NOT NULL,
+    unit_price DOUBLE NOT NULL,
+    tot_price DOUBLE NOT NULL,
+    FOREIGN KEY (o_id) REFERENCES orders(o_id),
+    FOREIGN KEY (p_id) REFERENCES products(p_id)
+);
+
+CREATE TABLE refunds (
+    refund_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    o_id BIGINT,
+    ref_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ref_amount DOUBLE NOT NULL,
+    status VARCHAR(50),
+    FOREIGN KEY (o_id) REFERENCES orders(o_id)
+);

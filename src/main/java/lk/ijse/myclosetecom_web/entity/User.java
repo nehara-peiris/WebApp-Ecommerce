@@ -1,9 +1,15 @@
-package lk.ijse.myclosetecom_web.model;
+package lk.ijse.myclosetecom_web.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Set;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Entity
 @Table(name = "user")
 public class User {
@@ -12,15 +18,13 @@ public class User {
     @Column(name = "u_id")
     private Long uId;
 
+    private String fullName;
     @Column(name = "u_name")
     private String uName;
 
     private String email;
     private String password;
     private String role;
-
-    @Column(name = "created_at")
-    private String createdAt;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Cart cart;
