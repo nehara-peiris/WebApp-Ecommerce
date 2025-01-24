@@ -59,8 +59,6 @@
                                     <li><a href="pages/login.jsp">shop</a></li>
                                     <li><a href="pages/about.jsp">About</a></li>
                                     <li><a href="pages/contact.jsp">Contact</a></li>
-                                    <li><a href="pages/customer.jsp">Customer</a></li>
-                                    <li><a href="pages/category/category-save.jsp">Category</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -153,7 +151,7 @@
                                 <!-- Hero Caption -->
                                 <div class="hero__caption">
                                     <h1>fashion<br>changing<br>always</h1>
-                                    <a href="login.jsp" class="btn">Shop Now</a>
+                                    <a href="pages/login.jsp" class="btn">Shop Now</a>
                                 </div>
                             </div>
                         </div>

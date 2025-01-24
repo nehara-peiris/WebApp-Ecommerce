@@ -11,7 +11,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Data
 public class UserDTO {
-    private Long uId;
+    private int uId;
     private String fullName;
     private String uName;
     private String email;
@@ -20,5 +20,18 @@ public class UserDTO {
     private Cart cart;
     private Set<OrderDTO> orders;
 
-    // Getters and setters
+    public UserDTO(String uName, String password, String role) {
+        this.uName = uName;
+        this.password = password;
+        this.role = role;
+    }
+
+    public UserDTO(int uId, String fullName, String uName, String email, String password, String role) {
+        this.uId = uId;
+        this.fullName = fullName;
+        this.uName = uName;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
 }

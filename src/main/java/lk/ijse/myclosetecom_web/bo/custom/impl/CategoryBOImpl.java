@@ -24,19 +24,18 @@ public class CategoryBOImpl implements CategoryBO {
 
     @Override
     public boolean addCategory(CategoryDTO dto) throws Exception {
-        Category category = new Category(dto.getCatId(), dto.getName(), dto.getDescription(), null);
+        Category category = new Category(dto.getCatId(), dto.getName(), dto.getDescription());
         return categoryDAO.add(category);
     }
 
     @Override
-    public boolean deleteCategory(CategoryDTO dto) throws Exception {
-        Category category = new Category(dto.getCatId(), dto.getName(), dto.getDescription(), null);
-        return categoryDAO.delete(category);
+    public boolean deleteCategory(String id) throws Exception {
+        return categoryDAO.delete(id);
     }
 
     @Override
     public boolean updateCategory(CategoryDTO dto) throws Exception {
-        Category category = new Category(dto.getCatId(), dto.getName(), dto.getDescription(), null);
+        Category category = new Category(dto.getCatId(), dto.getName(), dto.getDescription());
         return categoryDAO.update(category);
     }
 

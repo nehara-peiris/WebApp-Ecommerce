@@ -23,8 +23,7 @@ CREATE TABLE products (
     name VARCHAR(100) NOT NULL,
     price DOUBLE NOT NULL,
     qtyOnHand INT NOT NULL,
-    img_url VARCHAR(255) NOT NULL
-    FOREIGN KEY (cat_id) REFERENCES categories(cat_id),
+    FOREIGN KEY (cat_id) REFERENCES categories(cat_id)
 );
 
 CREATE TABLE cart (
@@ -41,6 +40,7 @@ CREATE TABLE orders (
     user_id BIGINT,
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     total DOUBLE NOT NULL,
+    status VARCHAR(100),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
@@ -60,6 +60,7 @@ CREATE TABLE refunds (
     o_id BIGINT,
     ref_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     ref_amount DOUBLE NOT NULL,
+    reason VARCHAR(200),
     status VARCHAR(50),
     FOREIGN KEY (o_id) REFERENCES orders(o_id)
 );

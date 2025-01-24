@@ -20,52 +20,54 @@
 </head>
 
 <body>
-
-<div class="wrapper" style="background-image: url('../assets/img/login/bg-registration-form-2.jpg');">
-    <div class="inner">
-        <form action="">
+<form action="${pageContext.request.contextPath}/register" method="post">
+    <div class="wrapper" style="background-image: url('../assets/img/login/bg-registration-form-2.jpg');">
+        <div class="inner">
             <h3>Registration Form</h3>
             <div class="form-group">
                 <div class="form-wrapper">
-                    <label>First Name</label>
-                    <input type="text" class="form-control">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" class="form-control">
                 </div>
                 <div class="form-wrapper">
-                    <label>Last Name</label>
-                    <input type="text" class="form-control">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" class="form-control">
                 </div>
             </div>
             <div class="form-wrapper">
-                <label>Username</label>
-                <input type="text" class="form-control">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control">
             </div>
             <div class="form-wrapper">
-                <label>Email</label>
-                <input type="text" class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control">
             </div>
             <div class="form-wrapper">
-                <label>Password</label>
-                <input type="password" class="form-control">
+                <label for="role">Role</label>
+                <input type="text" id="role" name="role" class="form-control">
             </div>
             <div class="form-wrapper">
-                <label>Confirm Password</label>
-                <input type="password" class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control">
+            </div>
+            <div class="form-wrapper">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control">
             </div>
             <div class="checkbox">
-                <label>
-                    <input type="checkbox"> I accept the Terms of Use & Privacy Policy.
+                <label for="terms">
+                    <input type="checkbox" id="terms" name="terms"> I accept the Terms of Use & Privacy Policy.
                     <span class="checkmark"></span>
                 </label>
             </div>
-            <button onclick="navigateToLogin()">Register Now</button>
-        </form>
+            <button type="submit">Register Now</button>
+        </div>
     </div>
-</div>
+</form>
 
 <script>
     function navigateToLogin() {
-        // Redirects to the login page
-        window.location.href = 'login.jsp';
+        window.location.href = 'pages/login.jsp';
     }
 </script>
 

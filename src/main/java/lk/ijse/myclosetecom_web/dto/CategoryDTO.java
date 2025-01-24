@@ -10,12 +10,12 @@ import java.util.Set;
 @NoArgsConstructor
 @Data
 public class CategoryDTO {
-    private Long catId;
+    private int catId;
     private String name;
     private String description;
     private Set<ProductDTO> products;
 
-    public CategoryDTO(Long catId, String name, String description) {
+    public CategoryDTO(int catId, String name, String description) {
         this.catId = catId;
         this.name = name;
         this.description = description;

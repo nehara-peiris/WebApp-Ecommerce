@@ -7,7 +7,7 @@ public interface CrudDAO<T> extends SuperDAO{
 
     boolean add(T entity) throws Exception;
 
-    boolean delete(T entity) throws Exception;
+    boolean delete(String id) throws Exception;
 
     boolean update(T entity) throws Exception;
 

@@ -1,6 +1,7 @@
 package lk.ijse.myclosetecom_web.dto;
 
 import lk.ijse.myclosetecom_web.entity.Cart;
+import lk.ijse.myclosetecom_web.entity.Category;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,14 +12,19 @@ import java.util.Set;
 @NoArgsConstructor
 @Data
 public class ProductDTO {
-    private Long pId;
-    private CategoryDTO category;
+    private int pId;
+    private int category;
     private String name;
     private Double price;
     private Integer qtyOnHand;
-    private String imgUrl;
     private Set<Cart> cartItems;
     private Set<OrderDetailDTO> orderDetails;
 
-    // Getters and setters
+    public ProductDTO(int pId, int category, String name, Double price, Integer qtyOnHand) {
+        this.pId = pId;
+        this.category = category;
+        this.name = name;
+        this.price = price;
+        this.qtyOnHand = qtyOnHand;
+    }
 }

@@ -12,6 +12,7 @@ public class OrderDetailDTO {
     private OrderDTO order;
     private ProductDTO product;
     private Integer qty;
+    private Double unitPrice;
+    private Double totPrice;
 
-    // Getters and setters
 }

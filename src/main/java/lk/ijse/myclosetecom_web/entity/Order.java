@@ -1,36 +1,30 @@
 package lk.ijse.myclosetecom_web.entity;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
 import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
-@Table(name = "orders")
 public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "o_id")
-    private Long oId;
-
-    @ManyToOne
-    @JoinColumn(name = "u_id")
-    private User user;
-
-    private String date;
+    private int oId;
+    private int user;
+    private Date date;
     private Double total;
     private String status;
 
-    @OneToMany(mappedBy = "order")
     private Set<OrderDetail> orderDetails;
-
-    @OneToMany(mappedBy = "order")
     private Set<Refund> refunds;
 
-    // Getters and setters
+    public Order(int oId, int user, Date date, Double total, String status) {
+        this.oId = oId;
+        this.user = user;
+        this.date = date;
+        this.total = total;
+        this.status = status;
+    }
 }

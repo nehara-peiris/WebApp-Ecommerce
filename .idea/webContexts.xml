@@ -5,9 +5,12 @@
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/about.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages" />
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/adminDashboard.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/adminDashboard.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/category/category-list.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages/category" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/category/category-save.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages/category" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/contact.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/login.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/order/order-wall.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages/order" />
       </map>
     </option>
   </component>

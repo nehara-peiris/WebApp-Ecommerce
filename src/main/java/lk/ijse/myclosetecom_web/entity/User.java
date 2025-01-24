@@ -10,27 +10,28 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
-@Table(name = "user")
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "u_id")
-    private Long uId;
-
+    private int uId;
     private String fullName;
-    @Column(name = "u_name")
     private String uName;
-
     private String email;
     private String password;
     private String role;
-
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Cart cart;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Order> orders;
 
-    // Getters and setters
+    public User(String uName, String password, String role) {
+        this.uName = uName;
+        this.password = password;
+        this.role = role;
+    }
+
+    public User(int uId, String fullName, String uName, String email, String password, String role) {
+        this.uId = uId;
+        this.fullName = fullName;
+        this.uName = uName;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
 }

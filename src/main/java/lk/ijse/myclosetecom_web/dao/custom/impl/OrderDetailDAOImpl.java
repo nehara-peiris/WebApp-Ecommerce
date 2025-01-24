@@ -3,6 +3,7 @@ package lk.ijse.myclosetecom_web.dao.custom.impl;
 import lk.ijse.myclosetecom_web.dao.custom.OrderDetailDAO;
 import lk.ijse.myclosetecom_web.entity.OrderDetail;
 
+
 import java.util.List;
 
 public class OrderDetailDAOImpl implements OrderDetailDAO {
@@ -13,17 +14,17 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 
     @Override
     public boolean add(OrderDetail entity) throws Exception {
-        return false;
+        return true;
     }
 
     @Override
-    public boolean delete(OrderDetail entity) throws Exception {
-        return false;
+    public boolean delete(String id) throws Exception {
+        return true;
     }
 
     @Override
     public boolean update(OrderDetail entity) throws Exception {
-        return false;
+        return true;
     }
 
     @Override

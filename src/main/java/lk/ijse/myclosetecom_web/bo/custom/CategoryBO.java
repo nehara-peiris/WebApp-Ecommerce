@@ -11,7 +11,7 @@ public interface CategoryBO extends SuperBO {
 
     boolean addCategory(CategoryDTO dto) throws Exception;
 
-    boolean deleteCategory(CategoryDTO dto) throws Exception;
+    boolean deleteCategory(String id) throws Exception;
 
     boolean updateCategory(CategoryDTO dto) throws Exception;
 
