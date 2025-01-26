@@ -25,10 +25,10 @@ public class ProductUpdateServlet extends HttpServlet {
         try {
             // Retrieve form data
             int pId = Integer.parseInt(req.getParameter("p_id"));
-            int catId = Integer.parseInt(req.getParameter("cat_id"));
-            String name = req.getParameter("name");
-            double price = Double.parseDouble(req.getParameter("price"));
-            int qtyOnHand = Integer.parseInt(req.getParameter("qtyOnHand"));
+            int catId = Integer.parseInt(req.getParameter("cid"));
+            String name = req.getParameter("cname");
+            double price = Double.parseDouble(req.getParameter("cprice"));
+            int qtyOnHand = Integer.parseInt(req.getParameter("cqtyOnHand"));
             String imageUrl = null;
 
             // Handle image upload
@@ -53,10 +53,12 @@ public class ProductUpdateServlet extends HttpServlet {
             // Update the product
             boolean isUpdated = productBO.updateProduct(productDTO);
 
-            if (isUpdated) {
-                req.setAttribute("message", "Product updated successfully.");
-            } else {
-                req.setAttribute("error", "Failed to update the product.");
+            if (isUpdated){
+                resp.setStatus(HttpServletResponse.SC_OK);
+                resp.getWriter().write("Product updated successfully.");
+            }else {
+                resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                resp.getWriter().write("Failed to update the Product.");
             }
         } catch (NumberFormatException e) {
             req.setAttribute("error", "Invalid product ID or quantity.");

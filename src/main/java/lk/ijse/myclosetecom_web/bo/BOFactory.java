@@ -12,13 +12,13 @@ public class BOFactory {
     }
 
     public enum BOTypes{
-        CART, CATEGORY, ORDERS, ORDERDETAIL, PRODUCT, REFUND, USER
+        CART, CATEGORY, ORDERS, ORDERDETAIL, PRODUCT, USER
     }
 
     public SuperBO getBO(BOTypes boTypes){
         switch (boTypes){
             case CART:
-                return new CartBOImpl();
+                return new CartItemBOImpl();
             case CATEGORY:
                 return new CategoryBOImpl();
             case ORDERS:
@@ -27,8 +27,6 @@ public class BOFactory {
                 return new OrderDetailBOImpl();
             case PRODUCT:
                 return new ProductBOImpl();
-            case REFUND:
-                return new RefundBOImpl();
             case USER:
                 return new UserBOImpl();
             default:

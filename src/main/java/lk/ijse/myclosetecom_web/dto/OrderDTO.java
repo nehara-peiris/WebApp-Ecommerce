@@ -17,7 +17,6 @@ public class OrderDTO {
     private Double total;
     private String status;
     private Set<OrderDetailDTO> orderDetails;
-    private Set<RefundDTO> refunds;
 
     public OrderDTO(int oId, int user, Date date, Double total, String status) {
         this.oId = oId;

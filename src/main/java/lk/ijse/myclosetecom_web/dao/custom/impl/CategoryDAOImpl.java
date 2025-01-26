@@ -2,9 +2,13 @@ package lk.ijse.myclosetecom_web.dao.custom.impl;
 
 import lk.ijse.myclosetecom_web.dao.SQLUtil;
 import lk.ijse.myclosetecom_web.dao.custom.CategoryDAO;
+import lk.ijse.myclosetecom_web.db.DBConnection;
 import lk.ijse.myclosetecom_web.entity.Category;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,12 +16,23 @@ public class CategoryDAOImpl implements CategoryDAO {
 
     @Override
     public List<Category> getAll() throws Exception {
-        ArrayList<Category> allCategories = new ArrayList<>();
-        ResultSet rst = SQLUtil.execute("SELECT * FROM categories");
+        String sql = "SELECT * FROM categories";
+        List<Category> allCategories = new ArrayList<>();
+        try (Connection connection = DBConnection.getDbConnection().getConnection();
+             PreparedStatement pstm = connection.prepareStatement(sql);
+             ResultSet rst = pstm.executeQuery()) {
 
-        while (rst.next()) {
-            Category category = new Category(rst.getInt("cat_id"), rst.getString("name"), rst.getString("description"));
-            allCategories.add(category);
+            while (rst.next()) {
+                Category category = new Category(
+                        rst.getInt("cat_id"),
+                        rst.getString("name"),
+                        rst.getString("description")
+                );
+                allCategories.add(category);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new Exception("Error fetching categories", e);
         }
         return allCategories;
     }

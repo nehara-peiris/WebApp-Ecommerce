@@ -21,25 +21,34 @@ public class OrderListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<OrderDTO> orderDTOList = new ArrayList<>();
-
         try {
-            ResultSet rst = (ResultSet) orderBO.getAllOrders();
-            while (rst.next()) {
-                OrderDTO orderDTO = new OrderDTO(
-                        rst.getInt("o_id"),
-                        rst.getInt("user_id"),
-                        rst.getDate("date"),
-                        rst.getDouble("total"),
-                        rst.getString("status")
-                );
-                orderDTOList.add(orderDTO);
-            }
+            String orderId = req.getParameter("id");
+            String customerId = req.getParameter("customerId");
 
-            req.setAttribute("orders", orderDTOList);
-            req.getRequestDispatcher("order-list").forward(req, resp);
+            if (orderId != null) {
+                // Fetch a single order by ID
+                OrderDTO order = orderBO.searchOrderById(orderId);
+                if (order != null) {
+                    req.setAttribute("order", order); // Set the single order as an attribute
+                    req.getRequestDispatcher("/orderDetails.jsp").forward(req, resp); // Forward to details page
+                } else {
+                    req.setAttribute("error", "Order not found");
+                    req.getRequestDispatcher("/error.jsp").forward(req, resp);
+                }
+            } else if (customerId != null) {
+                // Fetch orders by customer ID
+                List<OrderDTO> orders = orderBO.getOrdersByCustomerId(customerId);
+                req.setAttribute("orders", orders); // Set the orders list as an attribute
+                req.getRequestDispatcher("/customerOrders.jsp").forward(req, resp); // Forward to customer orders page
+            } else {
+                // Fetch all orders
+                List<OrderDTO> orders = orderBO.getAllOrders();
+                req.setAttribute("orders", orders); // Set the orders list as an attribute
+                req.getRequestDispatcher("/orderView.jsp").forward(req, resp); // Forward to all orders page
+            }
         } catch (Exception e) {
-            e.printStackTrace();
+            req.setAttribute("error", e.getMessage());
+            req.getRequestDispatcher("/error.jsp").forward(req, resp); // Forward to an error page
         }
     }
 }

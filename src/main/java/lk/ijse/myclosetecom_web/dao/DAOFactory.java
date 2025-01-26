@@ -12,13 +12,13 @@ public class DAOFactory {
     }
 
     public enum DAOTypes{
-        CART, CATEGORY, ORDERS, ORDERDETAIL, PRODUCT, REFUND, USER
+        CART, CATEGORY, ORDERS, ORDERDETAIL, PRODUCT, USER
     }
 
     public SuperDAO getDAO(DAOTypes types){
         switch (types){
             case CART:
-                return new CartDAOImpl();
+                return new CartItemDAOImpl();
             case CATEGORY:
                 return new CategoryDAOImpl();
             case ORDERS:
@@ -27,8 +27,6 @@ public class DAOFactory {
                 return new OrderDetailDAOImpl();
             case PRODUCT:
                 return new ProductDAOImpl();
-            case REFUND:
-                return new RefundDAOImpl();
             case USER:
                 return new UserDAOImpl();
             default:

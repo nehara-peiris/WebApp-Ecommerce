@@ -15,7 +15,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
+            background-color: black;
             overflow: hidden;
             color: black;
         }
@@ -51,6 +51,81 @@
 </head>
 <body>
 
+<div class="top-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Logo Section -->
+            <div class="col-md-3">
+                <div class="logo">
+                    <a href="#">
+                        <img src="../../assets/img/logo/logo.png" alt="Website Logo">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Search Bar Section -->
+            <div class="col-md-6">
+                <div class="search d-flex">
+                    <input type="text" placeholder="Search" aria-label="Search" class="form-control">
+                    <button class="btn btn-primary">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- User and Cart Section -->
+            <div class="col-md-3">
+                <div class="user d-flex justify-content-end align-items-center">
+                    <!-- My Account Dropdown -->
+                    <div class="dropdown me-3">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">My Account</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">Login</a></li>
+                            <li><a href="#" class="dropdown-item">Register</a></li>
+                        </ul>
+                    </div>
+                    <!-- Cart Icon -->
+                    <a href="../product/viewProduct.jsp" class="cart position-relative">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                        <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">(0)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark mt-3">
+            <a href="#" class="navbar-brand">MENU</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item">
+                        <a href="../../index.jsp" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../order/order-list.jsp" class="nav-link text-white">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../product/viewProduct.jsp" class="nav-link text-white">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../contact.jsp" class="nav-link">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../login.jsp" class="nav-link" id="logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
 <div id="main-container">
     <div class="container">
         <!-- Orders Table -->
@@ -61,6 +136,8 @@
                 <th>User ID</th>
                 <th>Total</th>
                 <th>Date</th>
+                <th>Status</th>
+
             </tr>
             </thead>
             <tbody>
@@ -92,8 +169,8 @@
             <tr>
                 <td><%= orderId %></td>
                 <td><%= userId %></td>
-                <td><%= date %></td>
                 <td><%= total %></td>
+                <td><%= date %></td>
                 <td><%= status %></td>
             </tr>
             <%

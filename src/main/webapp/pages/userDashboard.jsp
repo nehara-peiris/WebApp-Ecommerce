@@ -85,10 +85,10 @@
                         <a href="order/order-list.jsp" class="nav-link text-white">Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a href="product/product-wall.jsp" class="nav-link text-white">Browse</a>
+                        <a href="shop.html" class="nav-link text-white">Browse</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../contact.jsp" class="nav-link">Contact Us</a>
+                        <a href="contact.jsp" class="nav-link">Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a href="login.jsp" class="nav-link" id="logout">Logout</a>

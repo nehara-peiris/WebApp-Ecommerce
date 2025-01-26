@@ -17,7 +17,7 @@ public class User {
     private String email;
     private String password;
     private String role;
-    private Cart cart;
+    private CartItem cart;
     private Set<Order> orders;
 
     public User(String uName, String password, String role) {

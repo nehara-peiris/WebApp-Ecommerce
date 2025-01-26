@@ -23,7 +23,7 @@
             <div class="col-md-3">
                 <div class="logo">
                     <a href="#">
-                        <img src="assets/img/logo/logo.png" alt="Website Logo">
+                        <img src="../assets/img/logo/logo.png" alt="Website Logo">
                     </a>
                 </div>
             </div>
@@ -58,7 +58,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item">
-                        <a href="../index.jsp" class="nav-link active">Home</a>
+                        <a href="index.jsp" class="nav-link active">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link text-white">Dashboard</a>

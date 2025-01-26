@@ -6,6 +6,7 @@ import lk.ijse.myclosetecom_web.entity.Order;
 import lk.ijse.myclosetecom_web.entity.Product;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,5 +43,11 @@ public class OrderDAOImpl implements OrderDAO {
     @Override
     public Order searchById(Object id) throws Exception {
         return null;
+    }
+
+    @Override
+    public List<Order> getOrdersByCustomerId(String customerId) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("SELECT * FROM orders WHERE user_id=?", customerId);
+
     }
 }

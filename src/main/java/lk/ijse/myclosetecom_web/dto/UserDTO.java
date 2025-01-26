@@ -1,6 +1,6 @@
 package lk.ijse.myclosetecom_web.dto;
 
-import lk.ijse.myclosetecom_web.entity.Cart;
+import lk.ijse.myclosetecom_web.entity.CartItem;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +17,7 @@ public class UserDTO {
     private String email;
     private String password;
     private String role;
-    private Cart cart;
+    private CartItem cart;
     private Set<OrderDTO> orders;
 
     public UserDTO(String uName, String password, String role) {

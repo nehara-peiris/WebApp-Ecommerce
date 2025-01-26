@@ -17,7 +17,7 @@ public class Product {
     private Integer qtyOnHand;
     private String imgUrl;
 
-    private Set<Cart> cartItems;
+    private Set<CartItem> cartItems;
     private Set<OrderDetail> orderDetails;
 
     public Product(int pId, int catId, String name, Double price, Integer qtyOnHand, String imgUrl) {

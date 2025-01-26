@@ -1,5 +1,6 @@
 package lk.ijse.myclosetecom_web.controller.product;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,17 +16,24 @@ import java.util.List;
 @WebServlet(name = "ProductListServlet", value = "/product-list")
 public class ProductListServlet extends HttpServlet {
 
-    private ProductBO productBO = (ProductBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.PRODUCT);
+    ProductBO productBO = (ProductBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.PRODUCT);
 
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<ProductDTO> productList ;
+
         try {
-            List<ProductDTO> productList = productBO.getAllProducts();
-            System.out.println("Product List Size: " + productList.size()); // Debugging line
-            req.setAttribute("productList", productList);
-            req.getRequestDispatcher("path/to/your/product-list.jsp").forward(req, resp);
+            productList=  productBO.getAllProducts();
+            // Pass the list of products to the JSP
+            req.setAttribute("products", productList);
+
+            // Forward the request to the JSP
+            RequestDispatcher rd = req.getRequestDispatcher("viewProducts.jsp");
+            rd.forward(req, resp);
+
         } catch (Exception e) {
             e.printStackTrace();
-            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Unable to retrieve product list.");
+            resp.sendRedirect("viewProducts.jsp?error=Failed to retrieve products");
         }
     }
 }

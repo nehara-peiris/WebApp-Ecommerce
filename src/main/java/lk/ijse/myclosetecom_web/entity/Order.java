@@ -18,7 +18,6 @@ public class Order {
     private String status;
 
     private Set<OrderDetail> orderDetails;
-    private Set<Refund> refunds;
 
     public Order(int oId, int user, Date date, Double total, String status) {
         this.oId = oId;

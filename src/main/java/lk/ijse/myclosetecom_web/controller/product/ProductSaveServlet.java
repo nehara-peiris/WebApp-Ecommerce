@@ -53,11 +53,14 @@ public class ProductSaveServlet extends HttpServlet {
             // Save the product
             boolean isAdded = productBO.addProduct(productDTO);
 
-            if (isAdded) {
-                resp.sendRedirect("product-save.jsp");
-            } else {
-                resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to add the Product.");
+            if (isAdded){
+                resp.setStatus(HttpServletResponse.SC_OK);
+                resp.getWriter().write("Product saved successfully.");
+            }else {
+                resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                resp.getWriter().write("Failed to save the Product.");
             }
+
         } catch (Exception e) {
             e.printStackTrace();
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error occurred while saving the product.");

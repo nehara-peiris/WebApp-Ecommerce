@@ -1,6 +1,6 @@
 package lk.ijse.myclosetecom_web.dto;
 
-import lk.ijse.myclosetecom_web.entity.Cart;
+import lk.ijse.myclosetecom_web.entity.CartItem;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +17,7 @@ public class ProductDTO {
     private Double price;
     private Integer qtyOnHand;
     private String imgUrl;
-    private Set<Cart> cartItems;
+    private Set<CartItem> cartItems;
     private Set<OrderDetailDTO> orderDetails;
 
     public ProductDTO(int pId, int category, String name, Double price, Integer qtyOnHand) {
