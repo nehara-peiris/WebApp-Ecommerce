@@ -19,30 +19,58 @@ public class ProductBOImpl implements ProductBO {
         List<Product> productList = productDAO.getAll();
         List<ProductDTO> productDTOList = new ArrayList<>();
         for (Product product : productList) {
-            productDTOList.add(new ProductDTO(product.getPId(), product.getCatId(), product.getName(), product.getPrice(), product.getQtyOnHand()));
+            productDTOList.add(new ProductDTO(product.getPId(), product.getCatId(), product.getName(), product.getPrice(), product.getQtyOnHand(), product.getImgUrl()));
         }
+        System.out.println("Product List Size: " + productList.size());
         return productDTOList;
     }
 
     @Override
     public boolean addProduct(ProductDTO dto) throws Exception {
-        Product product = new Product(dto.getPId(), dto.getCategory(), dto.getName(), dto.getPrice(), dto.getQtyOnHand());
+        Product product = new Product(dto.getPId(), dto.getCategory(), dto.getName(), dto.getPrice(), dto.getQtyOnHand(), dto.getImgUrl());
         return productDAO.add(product);
     }
 
     @Override
     public boolean deleteProduct(String id) throws Exception {
-         return productDAO.delete(id);
+        return productDAO.delete(id);
     }
 
     @Override
     public boolean updateProduct(ProductDTO dto) throws Exception {
-        Product product = new Product(dto.getPId(), dto.getCategory(), dto.getName(), dto.getPrice(), dto.getQtyOnHand());
+        Product product = new Product(dto.getPId(), dto.getCategory(), dto.getName(), dto.getPrice(), dto.getQtyOnHand(), dto.getImgUrl());
         return productDAO.update(product);
     }
 
     @Override
     public ProductDTO searchProductById(Object id) throws Exception {
+        Product product = productDAO.searchById(id);
+        if (product != null) {
+            return new ProductDTO(
+                    product.getPId(),
+                    product.getCatId(),
+                    product.getName(),
+                    product.getPrice(),
+                    product.getQtyOnHand(),
+                    product.getImgUrl()
+            );
+        }
+        return null;
+    }
+
+    @Override
+    public ProductDTO searchProductByName(Object name) throws Exception {
+        Product product = productDAO.searchByName(name.toString());
+        if (product != null) {
+            return new ProductDTO(
+                    product.getPId(),
+                    product.getCatId(),
+                    product.getName(),
+                    product.getPrice(),
+                    product.getQtyOnHand(),
+                    product.getImgUrl()
+            );
+        }
         return null;
     }
 }

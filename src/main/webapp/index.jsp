@@ -187,7 +187,7 @@
                                 <span>Glasses</span>
                             </div>
                             <div class="favorit-items">
-                                <a href="shop.html" class="btn">Shop Now</a>
+                                <a href="pages/login.jsp" class="btn">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -200,7 +200,7 @@
                                 <span>Watches</span>
                             </div>
                             <div class="favorit-items">
-                                <a href="shop.html" class="btn">Shop Now</a>
+                                <a href="pages/login.jsp" class="btn">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -213,7 +213,7 @@
                                 <span>Jackets</span>
                             </div>
                             <div class="favorit-items">
-                                <a href="shop.html" class="btn">Shop Now</a>
+                                <a href="pages/login.jsp" class="btn">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -226,7 +226,7 @@
                                 <span>Clothes</span>
                             </div>
                             <div class="favorit-items">
-                                <a href="shop.html" class="btn">Shop Now</a>
+                                <a href="pages/login.jsp" class="btn">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -242,10 +242,9 @@
             <div class="col-xl-7 col-lg-9">
                 <div class="single-question text-center">
                     <h2 class="wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">collection houses our first-ever</h2>
-                    <a href="about.jsp" class="btn wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">About Us</a>
+                    <a href="pages/about.jsp" class="btn wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">About Us</a>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -375,9 +374,7 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-xl-12 ">
                         <div class="footer-copy-right text-center">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            <p>&copy; 2025 Women's Clothing Website. All rights reserved.</p>
                         </div>
                     </div>
                 </div>

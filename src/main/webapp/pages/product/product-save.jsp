@@ -41,7 +41,7 @@
 
     <h2>Save Product</h2>
 
-    <form action="${pageContext.request.contextPath}/product-save" method="post">
+    <form action="${pageContext.request.contextPath}/product-save" method="post" enctype="multipart/form-data">
         <label for="cat_id">Category ID:</label>
         <input type="text" id="cat_id" name="cat_id" required>
 
@@ -53,6 +53,9 @@
 
         <label for="qtyOnHand">Quantity on Hand:</label>
         <input type="number" id="qtyOnHand" name="qtyOnHand" required>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
 
         <button type="submit">Save Product</button>
     </form>

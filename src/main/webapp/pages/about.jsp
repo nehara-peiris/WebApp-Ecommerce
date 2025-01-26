@@ -62,7 +62,7 @@
                             <nav>
                                 <ul id="navigation">
                                     <li><a href="../index.jsp">Home</a></li>
-                                    <li><a href="shop.html">shop</a></li>
+                                    <li><a href="register.jsp">shop</a></li>
                                     <li><a href="#">About</a></li>
                                     <li><a href="contact.jsp">Contact</a></li>
                                 </ul>
@@ -128,7 +128,7 @@
                 <div class="col-lg-10">
                     <div class="section-tittle mb-60 text-center pt-10">
                         <h2>Our Story</h2>
-                        <p class="pera">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p class="pera">Discover the perfect blend of style, elegance, and comfort with our collection of women's clothing. Whether you're looking for chic casual wear, timeless formal outfits, or trendy accessories, we’ve got you covered. Redefine your wardrobe and express your unique personality with our curated selection.</p>
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -141,8 +141,7 @@
                 <div class="col-lg-10">
                     <div class="section-tittle mb-60 text-center pt-10">
                         <h2>Journey start from</h2>
-                        <p class="pera">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
+                        <p class="pera">From casual essentials to elegant evening wear, our collection is designed to make every woman feel confident and stylish.</p>                    </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="about-img pb-bottom">
@@ -154,7 +153,7 @@
                 <div class="col-lg-10">
                     <div class="section-tittle mb-60 text-center pt-10">
                         <h2>2020</h2>
-                        <p class="pera">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p class="pera">We strive to empower women by offering fashion-forward pieces that cater to all occasions. Each item in our store is carefully selected to ensure quality, comfort, and versatility. Shop with confidence and embrace your style journey with us.</p>
                     </div>
                 </div>
             </div>
@@ -289,7 +288,7 @@
                             </div>
                             <div class="footer-tittle">
                                 <div class="footer-pera">
-                                    <p>Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+                                    <p>Whether you're dressing for work, a special occasion, or a relaxing day out, you'll find the perfect outfit in our collections. Our range features high-quality fabrics, impeccable craftsmanship, and designs that celebrate femininity.</p>
                                 </div>
                             </div>
                             <!-- social -->
@@ -359,9 +358,7 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-xl-12 ">
                         <div class="footer-copy-right text-center">
-                            <p>
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            </p>
+                            <p>&copy; 2025 Women's Clothing Website. All rights reserved.</p>
                         </div>
                     </div>
                 </div>

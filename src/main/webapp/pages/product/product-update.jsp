@@ -1,64 +1,56 @@
+<%@ page import="lk.ijse.myclosetecom_web.dto.ProductDTO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Update Product</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .form-container {
-            width: 300px;
-            margin: 0 auto;
-        }
-        h2 {
-            text-align: center;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        input[type="text"],
-        input[type="number"] {
-            padding: 8px;
-            font-size: 14px;
-        }
-        button {
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
 </head>
 <body>
-<div class="form-container">
 
-    <h2>Update Product</h2>
+<h1>Update Product</h1>
 
-    <form action="${pageContext.request.contextPath}/product-update" method="post">
-        <label for="p_id">Product ID:</label>
-        <input type="text" id="p_id" name="p_id" required>
+<%
+    String message = request.getParameter("message");
+    String error = request.getParameter("error");
+%>
 
-        <label for="cat_id">Category ID:</label>
-        <input type="text" id="cat_id" name="cat_id" required>
+<%
+    if (message != null) {
+%>
+<div style="color: green"> <%= message %> </div>
+<%
+    }
+%>
 
-        <label for="name">Product Name:</label>
-        <input type="text" id="name" name="name" required>
+<%
+    if (error != null) {
+%>
+<div style="color: red"> <%= error %> </div>
+<%
+    }
+%>
 
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price" required>
 
-        <label for="qtyOnHand">Quantity on Hand:</label>
-        <input type="number" id="qtyOnHand" name="qtyOnHand" required>
+<form action="${pageContext.request.contextPath}/product-update" method="post" enctype="multipart/form-data">
+    <label for="p_id">Product ID:</label><br>
+    <input type="text" id="p_id" name="p_id" required><br><br>
 
-        <button type="submit">Update Product</button>
-    </form>
-</div>
+    <label for="cat_id">Category ID:</label><br>
+    <input type="text" id="cat_id" name="cat_id" required><br><br>
+
+    <label for="name">Product Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="price">Price:</label><br>
+    <input type="number" id="price" name="price" step="0.01" required><br><br>
+
+    <label for="qtyOnHand">Quantity:</label><br>
+    <input type="number" id="qtyOnHand" name="qtyOnHand" required><br><br>
+
+    <label for="image">Image (leave blank to keep current):</label><br>
+    <input type="file" id="image" name= "image" accept="image/*"><br><br>
+
+    <button type="submit">Update Product</button>
+</form>
+
 </body>
 </html>

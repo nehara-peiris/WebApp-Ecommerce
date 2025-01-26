@@ -15,4 +15,6 @@ public interface ProductBO extends SuperBO {
     boolean updateProduct(ProductDTO dto) throws Exception;
 
     ProductDTO searchProductById(Object id) throws Exception;
+
+    ProductDTO searchProductByName(Object name) throws Exception;
 }
